@@ -56,6 +56,7 @@ namespace Plants.API
                     var p = c.Password;
                     p.RequireDigit = p.RequireLowercase = p.RequireNonAlphanumeric = p.RequireUppercase = false;
                     p.RequiredLength = 6;
+                    c.User.RequireUniqueEmail = false;
                     c.ClaimsIdentity.UserIdClaimType = "userid";
                     c.Cookies.ApplicationCookie.AutomaticChallenge = false;
                 })

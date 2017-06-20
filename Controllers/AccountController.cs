@@ -68,8 +68,13 @@ namespace Plants.API.Controllers
             });
         }
 
-        //
-        // GET: /Account/Login
+        [HttpPost("api/register")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ApiRegister([FromBody]ApiLoginCredentials credentials)
+            => ((await _userManager.CreateAsync(new ApplicationUser { UserName = credentials.Username, Email = "apianonymous@anonymous.com" }, credentials.Password)).Succeeded)
+                ? (IActionResult)Ok()
+                : BadRequest();
+
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Login(string returnUrl = null)
@@ -81,8 +86,6 @@ namespace Plants.API.Controllers
             return View();
         }
 
-        //
-        // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
