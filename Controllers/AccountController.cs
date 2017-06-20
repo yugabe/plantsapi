@@ -69,10 +69,11 @@ namespace Plants.API.Controllers
         }
 
         [HttpPost("api/register")]
+        [ProducesResponseType(200, Type = typeof(ApiLoginResponse))]
         [AllowAnonymous]
         public async Task<IActionResult> ApiRegister([FromBody]ApiLoginCredentials credentials)
             => ((await _userManager.CreateAsync(new ApplicationUser { UserName = credentials.Username, Email = "apianonymous@anonymous.com" }, credentials.Password)).Succeeded)
-                ? (IActionResult)Ok()
+                ? await ApiLogin(credentials)
                 : BadRequest();
 
         [HttpGet]
