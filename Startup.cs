@@ -64,12 +64,13 @@ namespace Plants.API
 
             services.AddSingleton<SecurityKey>(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("Secrets:JwtSecurityKey").Value)));
 
+            services.AddSingleton<AuthorizationFlipSwitch>();
             services.AddMvc();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Plants API", Version = "v1" });
-                c.IncludeXmlComments(Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "Plants.API.xml"));
+                //c.IncludeXmlComments(Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "Plants.API.xml"));
             });
 
             services.AddScoped(s => new CurrentUserInfo { Id = s.GetRequiredService<IHttpContextAccessor>().HttpContext.User.FindFirst("userid")?.Value });
@@ -82,7 +83,7 @@ namespace Plants.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, SecurityKey jwtSigningKey)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, SecurityKey jwtSigningKey, AuthorizationFlipSwitch authFlipSwitch)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -128,7 +129,11 @@ namespace Plants.API
             jwtOptions.TokenValidationParameters.ValidateActor = false;
             jwtOptions.TokenValidationParameters.ValidateIssuer = false;
 
-            app.UseJwtBearerAuthentication(jwtOptions);
+            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/api")) && authFlipSwitch.Enabled,
+                branch => branch.UseJwtBearerAuthentication());
+
+            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/api")) && !authFlipSwitch.Enabled,
+                branch => branch.UseAnonymousUserMockAuthentication());
 
             app.UseIdentity();
 

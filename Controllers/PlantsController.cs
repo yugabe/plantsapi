@@ -52,7 +52,7 @@ namespace Plants.API.Controllers
 
             return _dbContext.Categories.Include(c => c.PlantCategories).ToList().Select(c => new CategoryViewModel { Id = c.Id, Name = c.Name, Plants = c.PlantCategories.Count() });
         }
-        
+
         [HttpPost("api/plants")]
         public IActionResult CreatePlant([FromBody]CreateUpdatePlantViewModel model)
         {
@@ -116,7 +116,6 @@ namespace Plants.API.Controllers
             _dbContext.RemoveRange(_dbContext.Categories.Where(c => c.Id == id));
             _dbContext.SaveChanges();
             return Ok();
-
         }
 
         [HttpDelete("api/plants/{id}")]

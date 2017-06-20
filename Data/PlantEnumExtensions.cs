@@ -8,7 +8,7 @@ namespace Plants.API.Data
     public static class PlantEnumExtensions
     {
         public static MonthFlags ToFlags(this IEnumerable<Month> months)
-            => (MonthFlags)months?.Distinct().Aggregate(0, (a, m) => (a | (1 << (((int)m) - 1))));
+            => (MonthFlags)(months ?? new Month[] { }).Distinct().Aggregate(0, (a, m) => (a | (1 << (((int)m) - 1))));
 
         public static string ToStringFirstLower(this Level level) => level.ToString().ToFirstLower();
 
