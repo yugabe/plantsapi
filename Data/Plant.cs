@@ -16,12 +16,12 @@ namespace Plants.API.Data
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public bool IsFrostProof { get; set; }
-        public Level LightReq { get; set; }
+        public LightRequirements LightReq { get; set; }
         public MonthFlags? PlantingTime { get; set; }
         //public MonthFlags? PickingTimes { get; set; }
         //public MonthFlags BloomingTimes { get; set; }
-        public Level WaterReq { get; set; }
-        public Level NutritionReq { get; set; }
+        public WaterRequirements WaterReq { get; set; }
+        public NutritionRequirements NutritionReq { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
         public ICollection<FavoritePlant> FavoritedByUsers { get; set; }

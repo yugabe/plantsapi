@@ -10,8 +10,9 @@ namespace Plants.API.Data
         public static MonthFlags ToFlags(this IEnumerable<Month> months)
             => (MonthFlags)(months ?? new Month[] { }).Distinct().Aggregate(0, (a, m) => (a | (1 << (((int)m) - 1))));
 
-        public static string ToStringFirstLower(this Level level) => level.ToString().ToFirstLower();
-
+        public static string ToStringFirstLower(this LightRequirements lightReq) => lightReq.ToString().ToFirstLower();
+        public static string ToStringFirstLower(this WaterRequirements waterReq) => waterReq.ToString().ToFirstLower();
+        public static string ToStringFirstLower(this NutritionRequirements nutrition) => nutrition.ToString().ToFirstLower();
         public static string ToStringFirstLower(this Month month) => month.ToString().ToFirstLower();
 
         public static IEnumerable<Month> ToValues(this MonthFlags monthFlags)

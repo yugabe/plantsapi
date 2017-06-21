@@ -10,10 +10,10 @@ namespace Plants.API.Models.PlantsViewModels
     {
         public bool? IsFrostProof { get; set; }
         public bool? IsFavorite { get; set; }
-        public Level[] LightReq { get; set; }
+        public LightRequirements[] LightReq { get; set; }
         public Month[] PlantingTime { get; set; }
-        public Level[] WaterReq { get; set; } // MOD
-        public Level[] NutritionReq { get; set; } // MOD
+        public WaterRequirements? WaterReq { get; set; }
+        public NutritionRequirements? NutritionReq { get; set; }
         //public Month[] PickingTime { get; set; }
         //public Month[] BloomingTime { get; set; }
 

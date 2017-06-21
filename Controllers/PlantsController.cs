@@ -56,7 +56,7 @@ namespace Plants.API.Controllers
                 .Select(c => c.CategoryId)
                 .ToList();
 
-            return _dbContext.Categories.ToList().Select(c => new CategoryViewModel { Id = c.Id, Name = c.Name, Plants = categoryNumbers.Count(n => n == c.Id) });
+            return _dbContext.Categories.ToList().Select(c => new CategoryViewModel { Id = c.Id, Name = c.Name, PlantsCount = categoryNumbers.Count(n => n == c.Id) });
         }
 
         [HttpPost("api/plants")]
@@ -72,11 +72,11 @@ namespace Plants.API.Controllers
                 IsFrostProof = model.IsFrostProof,
                 LightReq = model.LightReq,
                 Name = model.Name,
-                NutritionReq = model.NutritionLevel,
+                NutritionReq = model.NutritionReq,
                 //PickingTimes = model.PickingTime?.ToFlags(),
                 PlantingTime = model.PlantingTime?.ToFlags(),
                 Price = model.Price,
-                WaterReq = model.WaterLevel
+                WaterReq = model.WaterReq
             });
             try
             {

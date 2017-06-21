@@ -32,8 +32,8 @@ namespace Plants.API.Data
             if (filter.LightReq?.Any() == true)
                 plants = plants.Where(p => filter.LightReq.Contains(p.LightReq));
 
-            if (filter.NutritionReq?.Any() == true)
-                plants = plants.Where(p => filter.NutritionReq.Contains(p.NutritionReq));
+            if (filter.NutritionReq.HasValue )
+                plants = plants.Where(p => p.NutritionReq <= filter.NutritionReq);
 
             //if (filter.PickingTime?.Any() == true)
             //{
@@ -49,8 +49,8 @@ namespace Plants.API.Data
                     plants = plants.Where(p => p.PlantingTime == null || (p.PlantingTime & flags) != 0);
             }
 
-            if (filter.WaterReq?.Any() == true)
-                plants = plants.Where(p => filter.WaterReq.Contains(p.WaterReq));
+            if (filter.WaterReq.HasValue)
+                plants = plants.Where(p => p.WaterReq <= filter.WaterReq);
 
             return plants;
         }

@@ -9,6 +9,6 @@ namespace Plants.API.Models.PlantsViewModels
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Plants { get; set; }
+        public int PlantsCount { get; set; }
     }
 }

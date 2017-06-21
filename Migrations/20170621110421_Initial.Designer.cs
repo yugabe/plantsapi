@@ -8,7 +8,7 @@ using Plants.API.Data;
 namespace Plants.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170621101347_Initial")]
+    [Migration("20170621110421_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
