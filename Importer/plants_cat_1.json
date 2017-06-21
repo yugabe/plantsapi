@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Tearózsa",
+        "price": 1390,
+        "id": 3,
+        "categoryId": 1,
+        "isFrostProof": true,
+        "lightReq": "SUNNY",
+        "description": "Virágait erős szárakon a lomb felett hozza. Bőséges virágzás egészen őszig. Az extrém időjárási viszonyokat is jól bírja, hajtásait a szél sem töri meg. A bőséges virágzáshoz elengedhetetlen a gyakori öntözés és tápoldatozás. Az általunk ajánlott „Muskátli virágvarázs” kitűnően megfelel erre a célra.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "OCT", "NOV"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "MONTHLY",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/100839_jpg_137965_406_488.jpg"
+    },
+    {
+        "name": "Bokorrózsa Emilia Maria",
+        "price": 1590,
+        "id": 4,
+        "categoryId": 1,
+        "isFrostProof": true,
+        "lightReq": "SUNNY",
+        "description": "Egy nagyon gazdagon és szinte folyamatosan virágzó bokorrózsa. Pinkszínű, tömvetelt virágai csodálatos,graepfruit,iris és ibolya keverékére emlékeztető illatúak. Kisebb rácson felvezetve magasabbra is nevelhető.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "OCT", "NOV"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "BIWEEKLY",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/115150_jpg_56050_406_488.jpg"
+    },
+    {
+        "name": "Ágyásrózsa Julia Child",
+        "price": 1590,
+        "id": 5,
+        "categoryId": 1,
+        "isFrostProof": true,
+        "lightReq": "HALF_SHADY",
+        "description": "Ágyásrózsa. Egy száron több virágot is hoz, amik akár 12 cm nagyságúak, erős, aranysárga színűek. Legértékesebb csodálatos illata, különösen reggel mikor az első napsugarak felmelegítik a virágokat. Ez a fajta nem hiányozhat egyetlen rózsakertből sem!",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "OCT", "NOV"],
+        "waterReq": "LOW",
+        "nutritionReq": "WEEKLY",
+        "isFavorite":  true,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/119100_jpg_37607_406_488.jpg"
+    },
+    {
+        "name": "Művészrózsa Maurice Utrillo",
+        "price": 1890,
+        "id": 6,
+        "categoryId": 1,
+        "isFrostProof": true,
+        "lightReq": "HALF_SHADY",
+        "description": "Tűzpiros virágai fehéren csíkozottak. Mindehhez elragadó illat párosul.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "OCT", "NOV"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "BIWEEKLY",
+        "isFavorite":  true,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/110840_jpg_91884_406_488.jpg"
+    }
+]

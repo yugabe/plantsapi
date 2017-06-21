@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Estrella White",
+        "price": 2650,
+        "id": 0,
+        "categoryId": 0,
+        "isFrostProof": false,
+        "lightReq": "HALF_SHADY",
+        "description": "Virágait erős szárakon a lomb felett hozza. Bőséges virágzás egészen őszig. Az extrém időjárási viszonyokat is jól bírja, hajtásait a szél sem töri meg. A bőséges virágzáshoz elengedhetetlen a gyakori öntözés és tápoldatozás. Az általunk ajánlott „Muskátli virágvarázs” kitűnően megfelel erre a célra.",
+        "plantingTime": ["APRIL", "MAY", "JUNE"],
+        "waterReq": "HIGH",
+        "nutritionReq": "BIWEEKLY",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/100839_jpg_137965_406_488.jpg"
+    },
+    {
+        "name": "Álló muskátli",
+        "price": 1470,
+        "id": 1,
+        "categoryId": 0,
+        "isFrostProof": false,
+        "lightReq": "SUNNY",
+        "description": "Minden évben újabb fajták érkeznek. A legszebb virágú és legjobb fajtákat válogattam össze Önnek! Gazdagon virágoznak, nagyok a viráglabdák, szél- és időjárásállóak. Talán ezek a legfontosabb tulajdonságok. Bizonyára elégedett lesz a képen látható fajtákkal.",
+        "plantingTime": ["APRIL", "MAY", "JUNE"],
+        "waterReq": "HIGH",
+        "nutritionReq": "BIWEEKLY",
+        "isFavorite":  true,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/100164_jpg_70579_406_488.jpg"
+    },
+    {
+        "name": "Csüngő begónia",
+        "price": 1390,
+        "id": 2,
+        "categoryId": 0,
+        "isFrostProof": false,
+        "lightReq": "SHADY",
+        "description": "Újdonság, ami nem olcsó, de annál értékesebb! Barátai irigyelni fogják a rengeteg virágért. A 10 centiméteresre is megnövő fénylő virágok finom illatosak. Nem kell már az árnyékban sem nélkülöznie a bőséges virágzást! Ilyen helyekre a begóniák ültetése a legjobb választás. Egészen őszig messziről fénylenek virágai. Jó minőségű balkon virágföldet és rendszeres öntözést kíván.",
+        "plantingTime": ["APRIL", "MAY", "JUNE"],
+        "waterReq": "HIGH",
+        "nutritionReq": "WEEKLY",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/100696_jpg_84843_406_488.jpg"   
+    }
+]

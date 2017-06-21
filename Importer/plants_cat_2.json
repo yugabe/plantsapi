@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Delikatess csüngőeper",
+        "price": 1380,
+        "id": 6,
+        "categoryId": 2,
+        "isFrostProof": true,
+        "lightReq": "SUNNY",
+        "description": "Kert nélkül is folyamatosan szedheti a finom epreket! Használjon jó minőségű földet, megfelelő méretű virágládát. Gondoskodjon a felesleges víz elvezetéséről! Napi rendszerességgel végzett öntözés és a megfelelő tápanyagutánpótlás mellett rövid időn belül megjelennek az első termések.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "JUNE"],
+        "waterReq": "HIGH",
+        "nutritionReq": "WEEKLY",
+        "isFavorite":  true,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/090060_jpg_535663_406_488.jpg"
+    },
+    {
+        "name": "Málna Boheme",
+        "price": 1090,
+        "id": 7,
+        "categoryId": 2,
+        "isFrostProof": true,
+        "lightReq": "SUNNY",
+        "description": "Egy őszi érésű málna, amilyenre az ember vágyik. Szép színű, kellemes illatú, csodálatos ízű. Bogyói nagyon korán érnek. Felálló és kompakt növekedésű.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "OCT", "NOV"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "NONE",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/151330_jpg_131481_406_488.jpg"
+    },
+    {
+        "name": "Málna Golden Everest",
+        "price": 1290,
+        "id": 8,
+        "categoryId": 2,
+        "isFrostProof": true,
+        "lightReq": "HALF_SHADY",
+        "description": "A sárga termések teszik értékessé ezt a fajtát, mely különleges aromájával kiváló lekvárok, édességek és gyümölcslé készítéséhez. Terméseit június közepén a második éves vesszők végén hozza.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "SEPT", "OCT", "NOV"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "NONE",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/151240_jpg_273492_406_488.jpg"
+    },
+    {
+        "name": "Hortblue Petite áfonya",
+        "price": 1990,
+        "id": 9,
+        "categoryId": 2,
+        "isFrostProof": true,
+        "lightReq": "HALF_SHADY",
+        "description": "Hosszabbítsa meg a szüretelési időt egy közkedvelt bogyós fajtával! Sokan kedvelik az áfonyát akár müzlibe, gyümölcssalátába vagy csak egyszerűen frissen a bokorról.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "SEPT", "OCT", "NOV"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "NONE",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/154530_jpg_345266_406_488.jpg"
+    },
+    {
+        "name": "Vörös áfonya",
+        "price": 1690,
+        "id": 10,
+        "categoryId": 2,
+        "isFrostProof": true,
+        "lightReq": "HALF_SHADY",
+        "description": "Hosszabbítsa meg a szüretelési időt egy közkedvelt bogyós fajtával! Sokan kedvelik az áfonyát akár müzlibe, gyümölcssalátába vagy csak egyszerűen frissen a bokorról.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "JUNE", "SEPT", "OCT", "NOV"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "NONE",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/154520_jpg_402033_406_488.jpg"
+    }
+]
