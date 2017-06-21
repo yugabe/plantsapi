@@ -19,10 +19,11 @@ namespace Plants.Importer
             {
                 foreach (var categoryModel in JsonConvert.DeserializeObject<CategoryModel[]>(File.ReadAllText(baseDirectory.EnumerateFiles("categories.json").First().FullName)))
                 {
+                    var plantsFile = baseDirectory.EnumerateFiles($"plants_cat_{categoryModel.Id}.json").FirstOrDefault();
                     ctx.Categories.Add(new Category
                     {
                         Name = categoryModel.Name,
-                        Plants = File.Exists($"plants_cat_{categoryModel.Id}.json") ? JsonConvert.DeserializeObject<PlantModel[]>(File.ReadAllText(baseDirectory.EnumerateFiles($"plants_cat_{categoryModel.Id}.json").First().FullName)).Select(p => new Plant
+                        Plants = plantsFile?.Exists == true ? JsonConvert.DeserializeObject<PlantModel[]>(File.ReadAllText(plantsFile.FullName)).Select(p => new Plant
                         {
                             Description = p.Description,
                             ImageUrl = p.ImageUrl,
