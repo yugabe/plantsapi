@@ -9,13 +9,13 @@ namespace Plants.API.Models.PlantsViewModels
     public class FilterQueryModel
     {
         public bool? IsFrostProof { get; set; }
-        public bool? IsSaved { get; set; }
-        public Level[] LightReqs { get; set; }
+        public bool? IsFavorite { get; set; }
+        public Level[] LightReq { get; set; }
         public Month[] PlantingTime { get; set; }
-        public Month[] PickingTime { get; set; }
-        public Month[] BloomingTime { get; set; }
-        public Level[] WaterLevel { get; set; } // MOD
-        public Level[] NutritionLevel { get; set; } // MOD
+        public Level[] WaterReq { get; set; } // MOD
+        public Level[] NutritionReq { get; set; } // MOD
+        //public Month[] PickingTime { get; set; }
+        //public Month[] BloomingTime { get; set; }
 
         public int? CategoryId { get; set; } // MOD
     }

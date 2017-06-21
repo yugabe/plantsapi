@@ -8,7 +8,7 @@ using Plants.API.Data;
 namespace Plants.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170620104604_Initial")]
+    [Migration("20170621101347_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -156,7 +156,7 @@ namespace Plants.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("BloomingTimes");
+                    b.Property<int?>("CategoryId");
 
                     b.Property<string>("Description");
 
@@ -164,37 +164,24 @@ namespace Plants.API.Migrations
 
                     b.Property<bool>("IsFrostProof");
 
-                    b.Property<int>("LightReqs");
+                    b.Property<int>("LightReq");
 
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<int>("NutritionLevel");
+                    b.Property<int>("NutritionReq");
 
-                    b.Property<int?>("PickingTimes");
-
-                    b.Property<int?>("PlantingTimes");
+                    b.Property<int?>("PlantingTime");
 
                     b.Property<int>("Price");
 
-                    b.Property<int>("WaterLevel");
+                    b.Property<int>("WaterReq");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Plants");
-                });
-
-            modelBuilder.Entity("Plants.API.Data.PlantCategory", b =>
-                {
-                    b.Property<int>("PlantId");
-
-                    b.Property<int>("CategoryId");
-
-                    b.HasKey("PlantId", "CategoryId");
-
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("PlantCategories");
+                    b.ToTable("Plants");
                 });
 
             modelBuilder.Entity("Plants.API.Models.ApplicationUser", b =>
@@ -297,17 +284,11 @@ namespace Plants.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Plants.API.Data.PlantCategory", b =>
+            modelBuilder.Entity("Plants.API.Data.Plant", b =>
                 {
                     b.HasOne("Plants.API.Data.Category", "Category")
-                        .WithMany("PlantCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Plants.API.Data.Plant", "Plant")
-                        .WithMany("PlantCategories")
-                        .HasForeignKey("PlantId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Plants")
+                        .HasForeignKey("CategoryId");
                 });
         }
     }

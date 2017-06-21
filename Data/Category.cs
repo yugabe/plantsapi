@@ -11,6 +11,6 @@ namespace Plants.API.Data
         public int Id { get; set; }
         [Required, StringLength(200)]
         public string Name { get; set; }
-        public ICollection<PlantCategory> PlantCategories { get; set; }
+        public ICollection<Plant> Plants { get; set; }
     }
 }

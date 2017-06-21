@@ -51,29 +51,6 @@ namespace Plants.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Plants",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BloomingTimes = table.Column<int>(nullable: false),
-                    Description = table.Column<string>(nullable: true),
-                    ImageUrl = table.Column<string>(nullable: true),
-                    IsFrostProof = table.Column<bool>(nullable: false),
-                    LightReqs = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
-                    NutritionLevel = table.Column<int>(nullable: false),
-                    PickingTimes = table.Column<int>(nullable: true),
-                    PlantingTimes = table.Column<int>(nullable: true),
-                    Price = table.Column<int>(nullable: false),
-                    WaterLevel = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Plants", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetUsers",
                 columns: table => new
                 {
@@ -120,27 +97,31 @@ namespace Plants.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PlantCategories",
+                name: "Plants",
                 columns: table => new
                 {
-                    PlantId = table.Column<int>(nullable: false),
-                    CategoryId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CategoryId = table.Column<int>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    ImageUrl = table.Column<string>(nullable: true),
+                    IsFrostProof = table.Column<bool>(nullable: false),
+                    LightReq = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    NutritionReq = table.Column<int>(nullable: false),
+                    PlantingTime = table.Column<int>(nullable: true),
+                    Price = table.Column<int>(nullable: false),
+                    WaterReq = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PlantCategories", x => new { x.PlantId, x.CategoryId });
+                    table.PrimaryKey("PK_Plants", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_PlantCategories_Categories_CategoryId",
+                        name: "FK_Plants_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PlantCategories_Plants_PlantId",
-                        column: x => x.PlantId,
-                        principalTable: "Plants",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -264,8 +245,8 @@ namespace Plants.API.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PlantCategories_CategoryId",
-                table: "PlantCategories",
+                name: "IX_Plants_CategoryId",
+                table: "Plants",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
@@ -301,19 +282,16 @@ namespace Plants.API.Migrations
                 name: "FavoritePlants");
 
             migrationBuilder.DropTable(
-                name: "PlantCategories");
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetRoles");
+                name: "Plants");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "Plants");
         }
     }
 }

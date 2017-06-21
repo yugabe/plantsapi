@@ -8,49 +8,49 @@ namespace Plants.API.Data
 {
     public static class PlantsFilterExtensions
     {
-        public static IQueryable<Plant> FilterBy(this IQueryable<Plant> plants, FilterQueryModel filter, string currentUserId)
+        public static IEnumerable<Plant> FilterBy(this IEnumerable<Plant> plants, FilterQueryModel filter, string currentUserId)
         {
             if (filter == null)
                 return plants;
 
-            if (filter.BloomingTime?.Any() == true)
-            {
-                var flags = filter.BloomingTime.ToFlags();
-                if (flags != MonthFlags.None)
-                    plants = plants.Where(p => (p.BloomingTimes & flags) != 0);
-            }
+            //if (filter.BloomingTime?.Any() == true)
+            //{
+            //    var flags = filter.BloomingTime.ToFlags();
+            //    if (flags != MonthFlags.None)
+            //        plants = plants.Where(p => (p.BloomingTimes & flags) != 0);
+            //}
 
             if (filter.CategoryId != null)
-                plants = plants.Where(p => p.PlantCategories.Any(c => c.CategoryId == filter.CategoryId));
+                plants = plants.Where(p => p.CategoryId == filter.CategoryId);
 
             if (filter.IsFrostProof != null)
                 plants = plants.Where(p => p.IsFrostProof == filter.IsFrostProof);
 
-            if (filter.IsSaved != null && currentUserId != null)
-                plants = filter.IsSaved == true ? plants.Where(p => p.FavoritedByUsers.Any(pu => pu.UserId == currentUserId)) : plants.Where(p => p.FavoritedByUsers.All(pu => pu.UserId != currentUserId));
+            if (filter.IsFavorite != null && currentUserId != null)
+                plants = filter.IsFavorite == true ? plants.Where(p => p.FavoritedByUsers.Any(pu => pu.UserId == currentUserId)) : plants.Where(p => p.FavoritedByUsers.All(pu => pu.UserId != currentUserId));
 
-            if (filter.LightReqs?.Any() == true)
-                plants = plants.Where(p => filter.LightReqs.Contains(p.LightReqs));
+            if (filter.LightReq?.Any() == true)
+                plants = plants.Where(p => filter.LightReq.Contains(p.LightReq));
 
-            if (filter.NutritionLevel?.Any() == true)
-                plants = plants.Where(p => filter.NutritionLevel.Contains(p.NutritionLevel));
+            if (filter.NutritionReq?.Any() == true)
+                plants = plants.Where(p => filter.NutritionReq.Contains(p.NutritionReq));
 
-            if (filter.PickingTime?.Any() == true)
-            {
-                var flags = filter.PickingTime.ToFlags();
-                if (flags != MonthFlags.None)
-                    plants = plants.Where(p => p.PickingTimes == null || (p.PickingTimes & flags) != 0);
-            }
+            //if (filter.PickingTime?.Any() == true)
+            //{
+            //    var flags = filter.PickingTime.ToFlags();
+            //    if (flags != MonthFlags.None)
+            //        plants = plants.Where(p => p.PickingTimes == null || (p.PickingTimes & flags) != 0);
+            //}
 
             if (filter.PlantingTime?.Any() == true)
             {
                 var flags = filter.PlantingTime.ToFlags();
                 if (flags != MonthFlags.None)
-                    plants = plants.Where(p => p.PlantingTimes == null || (p.PlantingTimes & flags) != 0);
+                    plants = plants.Where(p => p.PlantingTime == null || (p.PlantingTime & flags) != 0);
             }
 
-            if (filter.WaterLevel?.Any() == true)
-                plants = plants.Where(p => filter.WaterLevel.Contains(p.WaterLevel));
+            if (filter.WaterReq?.Any() == true)
+                plants = plants.Where(p => filter.WaterReq.Contains(p.WaterReq));
 
             return plants;
         }

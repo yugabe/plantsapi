@@ -74,7 +74,7 @@ namespace Plants.API.Controllers
         public async Task<IActionResult> ApiRegister([FromBody]ApiLoginCredentials credentials)
             => ((await _userManager.CreateAsync(new ApplicationUser { UserName = credentials.Username, Email = "apianonymous@anonymous.com" }, credentials.Password)).Succeeded)
                 ? await ApiLogin(credentials)
-                : BadRequest();
+                : BadRequest("Invalid user data.");
 
         [HttpGet]
         [AllowAnonymous]

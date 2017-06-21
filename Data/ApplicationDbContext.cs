@@ -13,7 +13,6 @@ namespace Plants.API.Data
         public DbSet<Plant> Plants { get; set; }
         public DbSet<FavoritePlant> FavoritePlants { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<PlantCategory> PlantCategories { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
@@ -22,7 +21,6 @@ namespace Plants.API.Data
         {
             base.OnModelCreating(builder);
             builder.Entity<FavoritePlant>().HasKey(fp => new { fp.PlantId, fp.UserId });
-            builder.Entity<PlantCategory>().HasKey(pc => new { pc.PlantId, pc.CategoryId });
         }
     }
 }

@@ -17,13 +17,13 @@ namespace Plants.API.Data
                 ImageUrl = p.ImageUrl,
                 Price = p.Price,
                 IsFrostProof = p.IsFrostProof,
-                LightReqs = p.LightReqs.ToStringFirstLower(),
-                PlantingTime = p.PlantingTimes.ToStringsFirstLower(),
-                PickingTime = p.PickingTimes.ToStringsFirstLower(),
-                BloomingTime = p.BloomingTimes.ToStringsFirstLower(),
-                WaterLevel = p.WaterLevel.ToStringFirstLower(),
-                NutritionLevel = p.NutritionLevel.ToStringFirstLower(),
-                IsSaved = currentUserId == null ? null : p.FavoritedByUsers?.Any(u => u.UserId == currentUserId)
+                LightReq = p.LightReq.ToStringFirstLower(),
+                PlantingTime = p.PlantingTime.ToStringsFirstLower(),
+                //PickingTime = p.PickingTimes.ToStringsFirstLower(),
+                //BloomingTime = p.BloomingTimes.ToStringsFirstLower(),
+                WaterReq = p.WaterReq.ToStringFirstLower(),
+                NutritionReq = p.NutritionReq.ToStringFirstLower(),
+                IsFavorite = currentUserId == null ? null : p.FavoritedByUsers?.Any(u => u.UserId == currentUserId)
             });
     }
 }
