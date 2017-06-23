@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Aloe Vera",
+        "price": 1790,
+        "id": 15,
+        "categoryId": 4,
+        "isFrostProof": false,
+        "lightReq": "SUNNY",
+        "description": "Az Aloe vera az egyik legrégebbi gyógynövény a különféle külső és belső bajok gyógyítására. Enyhíti a fájdalmat, segíti a sebek, sérülések gyorsabb gyógyulását. Vágjon le egy darab levelet, majd a kipréselt levet kenje a sebre! A vaskos levelekből koktélok, italok is készülhetnek.",
+        "plantingTime": ["APRIL", "MAY", "JUNE", "JULY", "AUG", "SEPT", "OCT"],
+        "waterReq": "HIGH",
+        "nutritionReq": "WEEKLY",
+        "isFavorite":  true,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/102440_jpg_83473_406_488.jpg"
+    },
+    {
+        "name": "Homoktövis pár",
+        "price": 4150,
+        "id": 17,
+        "categoryId": 4,
+        "isFrostProof": true,
+        "lightReq": "HALF_SHADY",
+        "description": "Tudta Ön, hogy a homoktövis 10 - szer több C - vitamint tartalmaz mint a citrusfélék? Egy igazi bomba az immunrendszernek, és egy hatásos fegyver a megfázások ellen.",
+        "plantingTime": ["APRIL", "MAY", "SEPT"],
+        "waterReq": "HIGH",
+        "nutritionReq": "MONTHLY",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/130583_jpg_109750_406_488.jpg"
+    }
+]

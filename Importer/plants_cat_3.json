@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Csokoládészőlő",
+        "price": 1890,
+        "id": 11,
+        "categoryId": 3,
+        "isFrostProof": true,
+        "lightReq": "SUNNY",
+        "description": "Kínában és Japánban a szárított kérgét gyógyszerként használják. Gyulladáscsökkentő és a menstruációs problémákat enyhítő hatása is ismert. Gyökere lázcsillapító hatású, termése egyes vélemények szerint hatásos a daganatos betegségekkel szemben.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "JUNE", "SEPT", "OCT", "NOV"],
+        "waterReq": "LOW",
+        "nutritionReq": "MONTHLY",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/070535_jpg_51932_406_488.jpg"
+    },
+    {
+        "name": "Klemátisz ´Guernsey Cream´",
+        "price": 2190,
+        "id": 12,
+        "categoryId": 3,
+        "isFrostProof": false,
+        "lightReq": "HALF_SHADY",
+        "description": "Mint ahogy a neve is jelzi, az első krémszínű klemátisz! Különleges színű virágainak értékét egy sötét háttér még inkább kiemeli. A virág zöld közepe a sötétsárga porzókkal egyedülálló szépséget kölcsönöz a fajtának.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "SEPT", "OCT", "NOV"],
+        "waterReq": "LOW",
+        "nutritionReq": "BIWEEKLY",
+        "isFavorite":  true,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/070770_jpg_431988_406_488.jpg"
+    },
+    {
+        "name": "Klemátisz 'Innocent Blush'",
+        "price": 2990,
+        "id": 13,
+        "categoryId": 3,
+        "isFrostProof": false,
+        "lightReq": "SUNNY",
+        "description": "Csodaszép, nosztalgikus, új nemesítésű fajta. A 2. éves hajtásokon fejlődnek ki nagy, telt virágai.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "SEPT", "OCT"],
+        "waterReq": "MEDIUM",
+        "nutritionReq": "BIWEEKLY",
+        "isFavorite":  true,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/070735_jpg_228664_406_488.jpg"
+    },
+    {
+        "name": "Nyári lilaakác",
+        "price": 2590,
+        "id": 14,
+        "categoryId": 3,
+        "isFrostProof": true,
+        "lightReq": "SUNNY",
+        "description": "Június - júliusban nyíló, rózsaszín - lilás virágai akár a 35 cm nagyságot is elérhetik. Szereti a védett helyeket. Minél idősebb, annál szebb a virágzása. Edényben is nevelhető.",
+        "plantingTime": ["MARCH", "APRIL", "MAY", "SEPT", "OCT", "NOV"],
+        "waterReq": "LOW",
+        "nutritionReq": "MONTHLY",
+        "isFavorite":  false,
+        "imageUrl": "https://www.starkl.hu/img/eshop/thumbnails/070820_jpg_611190_406_488.jpg"
+    }
+]
