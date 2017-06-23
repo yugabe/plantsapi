@@ -55,7 +55,7 @@ namespace Plants.API
                 {
                     var p = c.Password;
                     p.RequireDigit = p.RequireLowercase = p.RequireNonAlphanumeric = p.RequireUppercase = false;
-                    p.RequiredLength = 6;
+                    p.RequiredLength = 1;
                     c.User.RequireUniqueEmail = false;
                     c.ClaimsIdentity.UserIdClaimType = "userid";
                     c.Cookies.ApplicationCookie.AutomaticChallenge = false;
@@ -96,7 +96,7 @@ namespace Plants.API
 
             if (env.IsDevelopment())
             {
-                app.UseWhen(c => !c.Request.Path.StartsWithSegments(new PathString("/api"), StringComparison.OrdinalIgnoreCase), branch =>
+                app.UseWhen(c => !IsApi(c), branch =>
                 {
                     branch.UseDeveloperExceptionPage();
                     branch.UseDatabaseErrorPage();
@@ -105,13 +105,13 @@ namespace Plants.API
             }
             else
             {
-                app.UseWhen(c => !c.Request.Path.StartsWithSegments(new PathString("/api"), StringComparison.OrdinalIgnoreCase), branch =>
+                app.UseWhen(c => !IsApi(c), branch =>
                 {
                     branch.UseExceptionHandler("/Home/Error");
                 });
             }
 
-            app.UseWhen(c => c.Request.Path.StartsWithSegments(new PathString("/api"), StringComparison.OrdinalIgnoreCase), branch =>
+            app.UseWhen(IsApi, branch =>
             {
                 branch.UseApiInterceptor();
             });
@@ -129,16 +129,19 @@ namespace Plants.API
             jwtOptions.TokenValidationParameters.ValidateAudience = false;
             jwtOptions.TokenValidationParameters.ValidateActor = false;
             jwtOptions.TokenValidationParameters.ValidateIssuer = false;
+            //jwtOptions.Events = new JwtBearerEvents();
 
-            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/api")) && authFlipSwitch.Enabled,
-                branch => branch.UseJwtBearerAuthentication());
+            app.UseWhen(context => IsApi(context) && authFlipSwitch.Enabled,
+                branch => branch.UseJwtBearerAuthentication(jwtOptions));
 
-            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/api")) && !authFlipSwitch.Enabled,
+            app.UseWhen(context => IsApi(context) && !authFlipSwitch.Enabled,
                 branch => branch.UseAnonymousUserMockAuthentication());
 
-            app.UseIdentity();
+            app.UseWhen(context => !IsApi(context), 
+                branch => branch.UseIdentity());
 
             app.UseMvcWithDefaultRoute();
         }
+        private static bool IsApi(HttpContext context) => context.Request.Path.StartsWithSegments(new PathString("/api"), StringComparison.OrdinalIgnoreCase);
     }
 }

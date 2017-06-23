@@ -76,7 +76,8 @@ namespace Plants.API.Controllers
                 //PickingTimes = model.PickingTime?.ToFlags(),
                 PlantingTime = model.PlantingTime?.ToFlags(),
                 Price = model.Price,
-                WaterReq = model.WaterReq
+                WaterReq = model.WaterReq,
+                CategoryId = model.CategoryId
             });
             try
             {

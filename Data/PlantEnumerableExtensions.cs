@@ -23,7 +23,8 @@ namespace Plants.API.Data
                 //BloomingTime = p.BloomingTimes.ToStringsFirstLower(),
                 WaterReq = p.WaterReq.ToStringFirstLower(),
                 NutritionReq = p.NutritionReq.ToStringFirstLower(),
-                IsFavorite = currentUserId == null ? null : p.FavoritedByUsers?.Any(u => u.UserId == currentUserId)
+                IsFavorite = currentUserId == null ? null : p.FavoritedByUsers?.Any(u => u.UserId == currentUserId),
+                CategoryId = p.CategoryId
             });
     }
 }

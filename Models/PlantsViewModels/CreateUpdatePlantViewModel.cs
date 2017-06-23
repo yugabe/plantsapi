@@ -19,5 +19,6 @@ namespace Plants.API.Models.PlantsViewModels
         public string Description { get; set; }
         public WaterRequirements WaterReq { get; set; }
         public NutritionRequirements NutritionReq { get; set; }
+        public int? CategoryId { get; set; }
     }
 }
