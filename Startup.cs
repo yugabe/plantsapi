@@ -137,10 +137,13 @@ namespace Plants.API
             app.UseWhen(context => IsApi(context) && !authFlipSwitch.Enabled,
                 branch => branch.UseAnonymousUserMockAuthentication());
 
-            app.UseWhen(context => !IsApi(context), 
+            app.UseWhen(context => !IsApi(context),
                 branch => branch.UseIdentity());
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", Action = "Index" });
+            });
         }
         private static bool IsApi(HttpContext context) => context.Request.Path.StartsWithSegments(new PathString("/api"), StringComparison.OrdinalIgnoreCase);
     }
